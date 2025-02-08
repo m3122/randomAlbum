@@ -4030,5 +4030,13 @@
         "spotify": "",
         "bandcamp": "https://lostfrog.bandcamp.com/album/mir4clen-5",
         "soundcloud": ""
+    },
+    {
+        "album": "Mutant Strain",
+        "artist": "Mutant Strain",
+        "cover": "https://e.snmc.io/i/600/s/3faff60a78927fd1f16c00146591ffd6/9081417/mutant-strain-mutant-strain-Cover-Art.jpg",
+        "spotify": "https://open.spotify.com/intl-es/album/6pLaN87ErEHdvjEXXrwwnf?si=wABAm6rrQRu9KddajnnEbA",
+        "bandcamp": "https://mutantstrain.bandcamp.com/album/mutant-strain",
+        "soundcloud": ""
     }
 ]
