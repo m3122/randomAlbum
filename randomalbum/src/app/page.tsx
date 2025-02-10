@@ -20,7 +20,11 @@ export default function Home() {
     const fetchAlbums = async () => {
       try {
         const response = await fetch('/api/albums');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const albums: Album[] = await response.json();
+        console.log('Fetched albums:', albums); // Log the fetched albums
         setAlbum(getRandomAlbum(albums));
         setLoading(false);
       } catch (error) {
@@ -41,6 +45,9 @@ export default function Home() {
     setLoading(true);
     try {
       const response = await fetch('/api/albums');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const albums: Album[] = await response.json();
       console.log('Fetched albums on refresh:', albums); // Log the fetched albums on refresh
       setAlbum(getRandomAlbum(albums));
