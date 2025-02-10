@@ -1,11 +1,40 @@
 'use client'
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
-import albums from '../../../public/albums.json';
+
+interface Album {
+  album: string;
+  artist: string;
+  cover: string;
+  spotify?: string;
+  bandcamp?: string;
+  soundcloud?: string;
+}
 
 export default function List() {
-    const sortedAlbums = [...albums].sort((a, b) => a.artist.localeCompare(b.artist));
+  const [albums, setAlbums] = useState<Album[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      try {
+        const response = await fetch('/api/albums');
+        const albums: Album[] = await response.json();
+        setAlbums(albums);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to fetch albums:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchAlbums();
+  }, []);
+
+  const sortedAlbums = [...albums].sort((a, b) => a.artist.localeCompare(b.artist));
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen text-center mt-10">
@@ -31,11 +60,6 @@ export default function List() {
           ))}
         </tbody>
       </table>
-      <Link href="/albums.json">
-        <button className="mt-5 px-5 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-          Get JSON
-        </button>
-      </Link>
     </div>
   );
 }

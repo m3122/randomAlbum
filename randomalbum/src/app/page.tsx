@@ -1,20 +1,59 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import albums from '../../public/albums.json';
+
+interface Album {
+  album: string;
+  artist: string;
+  cover: string;
+  spotify?: string;
+  bandcamp?: string;
+  soundcloud?: string;
+}
 
 export default function Home() {
-  const getRandomAlbum = () => {
+  const [album, setAlbum] = useState<Album | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      try {
+        const response = await fetch('/api/albums');
+        const albums: Album[] = await response.json();
+        setAlbum(getRandomAlbum(albums));
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to fetch albums:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchAlbums();
+  }, []);
+
+  const getRandomAlbum = (albums: Album[]) => {
     const randomIndex = Math.floor(Math.random() * albums.length);
     return albums[randomIndex];
   };
 
-  const [album, setAlbum] = useState(getRandomAlbum());
-
-  const handleRefresh = () => {
-    setAlbum(getRandomAlbum());
+  const handleRefresh = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/albums');
+      const albums: Album[] = await response.json();
+      console.log('Fetched albums on refresh:', albums); // Log the fetched albums on refresh
+      setAlbum(getRandomAlbum(albums));
+      setLoading(false);
+    } catch (error) {
+      console.error('Failed to fetch albums:', error);
+      setLoading(false);
+    }
   };
+
+  if (loading) return <div>Loading...</div>;
+
+  if (!album) return <div>No album found</div>;
 
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center">
