@@ -10,12 +10,20 @@ const options = {};
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
-if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
+declare global {
+  namespace NodeJS {
+    interface GlobalThis {
+      _mongoClientPromise: Promise<MongoClient>;
+    }
   }
-  clientPromise = global._mongoClientPromise;
+}
+
+if (process.env.NODE_ENV === 'development') {
+  if (!(globalThis as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> })._mongoClientPromise) {
+    client = new MongoClient(uri, options);
+    (globalThis as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> })._mongoClientPromise = client.connect();
+  }
+  clientPromise = (globalThis as typeof globalThis & { _mongoClientPromise: Promise<MongoClient> })._mongoClientPromise;
 } else {
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
