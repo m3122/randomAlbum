@@ -4038,5 +4038,69 @@
         "spotify": "https://open.spotify.com/intl-es/album/6pLaN87ErEHdvjEXXrwwnf?si=wABAm6rrQRu9KddajnnEbA",
         "bandcamp": "https://mutantstrain.bandcamp.com/album/mutant-strain",
         "soundcloud": ""
+    },
+    {
+        "album": "Destroyer Has Godmind",
+        "artist": "DEF.MASTER",
+        "cover": "https://e.snmc.io/i/600/s/23c3cac8590233c586c3bc19123f7231/4849918/def_master-destroyer-has-godmind-Cover-Art.jpg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "Thoughts Distorted",
+        "artist": "DEF.MASTER",
+        "cover": "https://e.snmc.io/i/600/s/41d0f18460251160b8833903b2f90b73/5332614/def_master-thoughts-distorted-Cover-Art.jpg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "Kyu-Box.",
+        "artist": "大正九年",
+        "cover": "https://e.snmc.io/i/600/s/4e85088b082834de9070c0f46dbfe719/3792417/%E5%A4%A7%E6%AD%A3%E4%B9%9D%E5%B9%B4-taishou-kyuunen-kyu-box-Cover-Art.jpg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "D.A.N.C.E.2.N.O.I.S.E.0.0.1",
+        "artist": "Varios",
+        "cover": "https://i.discogs.com/Ahyx1CvhX6vekIuDtofkCiS5iUClOHv87pnbk-A77xs/rs:fit/g:sm/q:90/h:544/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5Mzk3/MS0xNjc3Mzk2MjY3/LTc2NTUuanBlZw.jpeg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "D.A.N.C.E.2.N.O.I.S.E.0.0.2",
+        "artist": "Varios",
+        "cover": "https://i.discogs.com/tS6FDnR3GLp7lW6tnhDOnHckxLkG10HQ0xKZc5g_PIQ/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1MDI2/NjgtMTI4NzUzNTY4/Ni5wbmc.jpeg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "D.A.N.C.E.2.N.O.I.S.E.0.0.3",
+        "artist": "Varios",
+        "cover": "https://i.discogs.com/iiXuuNs6SQhyH3UAsHrtn8u1Wt7_9tUsY3V0HbHOhN8/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzOTIx/MjctMTY2NDU5MDcy/NC05MTE1LmpwZWc.jpeg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "D.A.N.C.E.2.N.O.I.S.E.0.0.4",
+        "artist": "Varios",
+        "cover": "https://i.discogs.com/xtUYSoetiAMQbQztEcuCzqrv7Abge7CnoMGPgwRj3wk/rs:fit/g:sm/q:90/h:600/w:594/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyMzMw/NTYtMTQ3NTE2NTI1/MC05OTU0LmpwZWc.jpeg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
+    },
+    {
+        "album": "D.A.N.C.E.2.N.O.I.S.E.0.0.5",
+        "artist": "Varios",
+        "cover": "https://i.discogs.com/01tfHP8NylFkOTrGBX7ETbuYE5kgLJYJLtiGsoWNzcA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NDk4/MTUtMTUxMzI2MTkz/OC02ODY5LnBuZw.jpeg",
+        "spotify": "",
+        "bandcamp": "",
+        "soundcloud": ""
     }
 ]
