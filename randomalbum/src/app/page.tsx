@@ -13,6 +13,7 @@ interface Album {
 }
 
 export default function Home() {
+  const [albums, setAlbums] = useState<Album[]>([]);
   const [album, setAlbum] = useState<Album | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -25,6 +26,7 @@ export default function Home() {
         }
         const albums: Album[] = await response.json();
         console.log('Fetched albums:', albums); // Log the fetched albums
+        setAlbums(albums);
         setAlbum(getRandomAlbum(albums));
         setLoading(false);
       } catch (error) {
@@ -41,21 +43,8 @@ export default function Home() {
     return albums[randomIndex];
   };
 
-  const handleRefresh = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/albums');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const albums: Album[] = await response.json();
-      console.log('Fetched albums on refresh:', albums); // Log the fetched albums on refresh
-      setAlbum(getRandomAlbum(albums));
-      setLoading(false);
-    } catch (error) {
-      console.error('Failed to fetch albums:', error);
-      setLoading(false);
-    }
+  const handleRefresh = () => {
+    setAlbum(getRandomAlbum(albums));
   };
 
   if (loading) return <div>Loading...</div>;
